@@ -17,6 +17,26 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+const getSpaces = ( string, strLength ) => {
+  let spaces = "";
+  for( let x = string.length; x < strLength; x++ ) {
+    spaces += " ";
+  }
+
+  return string + spaces;
+}
+
+function steps(n) {
+  let step = "#"
+  for( x = 1; x <= n; x++ ){
+    let y = 1;
+    let string = "";
+    while(y <= x){
+      string+=step;
+      y++;
+    }
+    console.log(getSpaces( string, n ));
+  }
+}
 
 module.exports = steps;
